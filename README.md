@@ -1,11 +1,24 @@
 
-## Student API - Backend Assignment
+## Student API - Assignment
 
-A backend REST API built using **Node.js**, **Express**, and **MongoDB**. The app fetches student data from a third-party API, stores and processes it in a MongoDB database, and exposes secured endpoints to access the processed data.
+🚀 A full-stack web application built using Node.js, Express, MongoDB, and React with TypeScript and TailwindCSS. The backend exposes secure RESTful APIs for managing student data, including authentication using JWT, data analytics like average age and course distribution, and CRUD operations. The frontend provides a clean, modular dashboard with dynamic charts, statistics cards, and responsive UI for managing and visualizing student records efficiently
 
 ---
 
+### Screenshot 
+
+![Dashboard Screenshot](/client/public/01.png)
+![Dashboard Screenshot](/client/public/02.png)
+![Dashboard Screenshot](/client/public/03.png)
+![Dashboard Screenshot](/client/public/04.png)
+
+
+---
+
+
 ### 🔧 Tech Stack
+
+-   **React.js + Tailwind**
 
 -   **Node.js + Express**
 
@@ -26,6 +39,10 @@ A backend REST API built using **Node.js**, **Express**, and **MongoDB**. The ap
 
 ```bash
 git clone https://github.com/Al0kKumar/eraah.git
+cd client 
+npm install
+cd ..
+cd server
 npm install
 ```
 
@@ -46,10 +63,16 @@ JWT_SECRET=<your_jwt_secret>
 #### Start Server
 
 ```bash
+cd server
 npm run dev
 ```
 
----
+#### Start Client
+
+```bash
+cd client
+npm run dev
+```
 
 ### 📥 One-Time Data Sync
 
@@ -99,53 +122,6 @@ GET /api/students?active=true&sortBy=name
 
 -   Sorts by name (if specified)
 
-
----
-
-### 🧪 Testing JWT Middleware (Dummy)
-
-Use any dummy token for testing in the header (since no auth/signup is implemented):
-
-```http
-Authorization: Bearer <your_jwt_token>
-```
-
-You can create a token manually using:
-
-```js
-jwt.sign({ userId: '1234' }, JWT_SECRET);
-```
-
----
-
-### 📁 Folder Structure
-
-```
-├── controllers
-│   └── studentController.ts
-├── middleware
-│   └── auth.ts
-├── models
-│   └── students.ts
-├── routes
-│   └── studentRoutes.ts
-├── utils
-│   └── sync.ts
-├── index.ts
-├── .env
-├── tsconfig.json
-├── package.json
-```
-
----
-
-### 📌 Notes
-
--   This is a backend-only project.
-
--   No login/signup implemented, use JWT directly for protected routes.
-
--   Data is fetched once during initial boot.
 
 
 ---
