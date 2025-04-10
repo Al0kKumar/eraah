@@ -5,6 +5,7 @@ import studentRoutes from "./routes/studentRoutes"
 import { justOnce } from "./utils/fetchStudents";
 import auth from "./routes/authRoutes"
 import cors from "cors";
+import data from "./routes/dataRoutes";
 dotenv.config();
 
 const app = express();
@@ -19,6 +20,7 @@ justOnce();
 
 app.use("/api", studentRoutes);
 app.use("/api/auth", auth);
+app.use("/api/data", data);
 
 app.listen(PORT, () => {
     console.log(`server is running at ${PORT}`);
