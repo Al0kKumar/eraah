@@ -27,7 +27,7 @@ interface APIStudent {
       const students = response.data; // Now it's of type APIStudent[]
       
       const processed: Partial<IStudent>[] = students.map((student) => {
-        const { id, ...rest } = student; // remove id
+        const { id, ...rest } = student; 
         return {
           ...rest,
           lastUpdated: new Date(),
@@ -36,7 +36,6 @@ interface APIStudent {
 
       await Student.insertMany(processed);
       
-      // Continue with inserting into MongoDB etc.
     } catch (error) {
       console.error("Error syncing student data:", error);
     }
