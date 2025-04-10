@@ -71,6 +71,9 @@ mongoose.connect(MONGO_URI).then(() => {
 
 All routes require a valid JWT token in the `Authorization` header as `Bearer <token>`.
 
+#### Get `/api/token`
+Fetch dummy token for future protected routes
+
 #### GET `/api/students`
 
 Fetch students (processed data)
